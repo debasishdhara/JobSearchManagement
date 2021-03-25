@@ -26,17 +26,5 @@ class UserController extends Controller
         $this->middleware('auth:api');
     }
 
-    public function showMovie(){
-        $movies = Movie::all();
-        return response()->json([
-            "serverResponse" => [
-                "code" => 200,
-                "message" => "Movies Fetched Successfully",
-                "isSuccess" => true
-            ],
-            "result" => [
-                "movies" => UsermovieResource::collection($movies)
-            ]
-            ]);
-    }
+
 }

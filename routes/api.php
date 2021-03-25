@@ -32,11 +32,7 @@ Route::group(['middleware' => ['auth:api','admin']], function () {
     /** Dashboard*/
     /** Admin Folder Access */
     Route::namespace('Admin')->group(function () {
-        Route::post('/moviecreate', 'AdminController@createMovie')->name('create-api-movie');
-        Route::post('/movieedit/{id}', 'AdminController@editMovie')->name('edit-api-movie-view');
-        Route::get('/movieedit/{id}', 'AdminController@editMoviedetails')->name('edit-api-movie');
-        Route::delete('/moviedelete/{id}', 'AdminController@deleteMovie')->name('edit-api-movie');
-        Route::get('/movielist', 'AdminController@showMovielist')->name('list-api-movie');
+
     });
 });
 /** User */
@@ -44,6 +40,6 @@ Route::group(['middleware' => ['auth:api']], function () {
      /** Dashboard*/
     /** User Folder Access */
     Route::namespace('User')->group(function () {
-        Route::get('/movies', 'UserController@showMovie')->name('api-movie-show');
+
     });
 });
